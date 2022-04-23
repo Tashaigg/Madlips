@@ -5,6 +5,7 @@ import verb
 import adje
 import showresult
 import find_index
+
 def noun(tex):
     def savenoun(event="1"):
         texto = tex
