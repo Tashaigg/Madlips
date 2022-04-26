@@ -52,11 +52,11 @@ def noun(tex):
     askn.bind("<Escape>", closeaskn)
 
     #images
-    cancel_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\btncancel.png"))
+    cancel_img = PhotoImage(file=resource_path(f"btncancel.png"))
     askn.cancel_img = cancel_img
-    ok_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\btnok.png"))
+    ok_img = PhotoImage(file=resource_path(f"btnok.png"))
     askn.ok_img = ok_img
-    enternoun_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\enternoun.png"))
+    enternoun_img = PhotoImage(file=resource_path(f"enternoun.png"))
     askn.enternoun_img = enternoun_img
 
     # Create Canvas

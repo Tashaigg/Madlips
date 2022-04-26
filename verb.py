@@ -46,11 +46,11 @@ def verb(tex):
     askv.bind("<Escape>", closeaskv)
 
     #images
-    enterverb_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\enterverb.png"))
+    enterverb_img = PhotoImage(file=resource_path(f"enterverb.png"))
     askv.enterverb_img = enterverb_img
-    cancel_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\btncancel.png"))
+    cancel_img = PhotoImage(file=resource_path(f"btncancel.png"))
     askv.cancel_img = cancel_img
-    ok_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\btnok.png"))
+    ok_img = PhotoImage(file=resource_path(f"btnok.png"))
     askv.ok_img = ok_img
 
     # Create Canvas

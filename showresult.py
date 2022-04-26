@@ -29,8 +29,8 @@ def result(tex='The text would be showed here.'):
     result_wind.bind("<Escape>", closeres)
 
 
-    ok_image = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\btnok.png"))
-    bill_image = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\bill.png"))
+    ok_image = PhotoImage(file=resource_path(f"btnok.png"))
+    bill_image = PhotoImage(file=resource_path(f"bill.png"))
     result_wind.ok_img = ok_image
     result_wind.bill_img = bill_image
 

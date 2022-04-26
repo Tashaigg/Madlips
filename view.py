@@ -49,11 +49,11 @@ def view():
     view_wind.bind("<Escape>", closeview)
 
     # Images
-    view_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\view.png"))
+    view_img = PhotoImage(file=resource_path(f"view.png"))
     view_wind.view_img = view_img
-    askview_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\askview.png"))
+    askview_img = PhotoImage(file=resource_path(f"askview.png"))
     view_wind.askview_img = askview_img
-    cancel_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\btncancel.png"))
+    cancel_img = PhotoImage(file=resource_path(f"btncancel.png"))
     view_wind.cancel_img = cancel_img
 
     # Creating canvas

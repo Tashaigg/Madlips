@@ -38,11 +38,11 @@ def register():
     regist_wind.bind("<Escape>", closenewm)
 
 
-    savemodel_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\savemodel.png"))
+    savemodel_img = PhotoImage(file=resource_path(f"savemodel.png"))
     regist_wind.savemodel_img = savemodel_img
-    cancelmodel_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\cancelmodel.png"))
+    cancelmodel_img = PhotoImage(file=resource_path(f"cancelmodel.png"))
     regist_wind.cancelmodel_img = cancelmodel_img
-    newstory_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\enternewstory.png"))
+    newstory_img = PhotoImage(file=resource_path(f"enternewstory.png"))
     regist_wind.newstory_img = newstory_img
     # Create Canvas
     canvas1 = Canvas(regist_wind, width=913, height=473, bg="#000fff030", bd=0, highlightthickness=0)

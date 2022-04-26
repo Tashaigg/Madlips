@@ -27,7 +27,7 @@ def adje(tex):
             adje(texto)
         if "NOUN" not in texto and "VERB" not in texto and "ADJECTIVE" not in texto:
             showresult.result(texto)
-            p = open(Path(f'{Path.home()}\\MadLips\\docs\\Your Tales.txt'), "a")
+            p = open(Path('docs\\Your Tales.txt'), "a")
             p.write(f"\n{int(find_index.find_index())+1}- {texto}\n/")
             p.close()
 
@@ -42,11 +42,11 @@ def adje(tex):
     aska.bind("<Escape>", closeaska)
 
     #images
-    cancel_img = PhotoImage(file=resource_path(f'{Path.home()}\\MadLips\\btncancel.png'))
+    cancel_img = PhotoImage(file=resource_path('btncancel.png'))
     aska.cancel_img = cancel_img
-    ok_img = PhotoImage(file=resource_path(f'{Path.home()}\\MadLips\\btnok.png'))
+    ok_img = PhotoImage(file=resource_path('btnok.png'))
     aska.ok_img = ok_img
-    enteradjective_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\enteradjective.png"))
+    enteradjective_img = PhotoImage(file=resource_path(f"enteradjective.png"))
     aska.enteradjective_img = enteradjective_img
 
     # Create Canvas
