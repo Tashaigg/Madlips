@@ -1,12 +1,12 @@
-from tkinter import *
-from tkinter.ttk import *
 import os, random, string
 from pathlib import Path
-import showresult, noun, verb, adje, play
-import register
-import find_index
-import view, inichecker
+import inichecker
+inichecker.inichecker()
+from tkinter import *
+from tkinter.ttk import *
+import showresult, noun, verb, adje, play, register, find_index, view
 
+os.chdir(f'{Path.home()}/MadLips/')
 # Create object
 root = Tk()
 root.geometry("1140x570")# Adjust size

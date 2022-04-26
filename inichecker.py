@@ -21,3 +21,6 @@ def inichecker():
     ps2.close()
     p = open("Your Tales.txt", "a")
     p.close()
+
+if __name__ == "__main__":
+    inichecker()
