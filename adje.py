@@ -30,7 +30,6 @@ def adje(tex):
     aska.bind("<Escape>", closeaska)
 
     #images
-
     cancel_img = PhotoImage(file=f'{Path.home()}\\MadLips\\btncancel.png')
     aska.cancel_img = cancel_img
     ok_img = PhotoImage(file=f'{Path.home()}\\MadLips\\btnok.png')
