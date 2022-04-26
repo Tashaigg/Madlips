@@ -25,7 +25,7 @@ def register():
     regist_wind.bind("<Return>", savemod)
     regist_wind.bind("<Escape>", closenewm)
 
-    cancel_img = PhotoImage(file=f"{Path.home()}\\MadLips\\btncancel.png")
+
     savemodel_img = PhotoImage(file=f"{Path.home()}\\MadLips\\savemodel.png")
     regist_wind.savemodel_img = savemodel_img
     cancelmodel_img = PhotoImage(file=f"{Path.home()}\\MadLips\\cancelmodel.png")
