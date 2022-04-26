@@ -2,6 +2,10 @@ import os
 from pathlib import Path
 
 def inichecker():
+    try:
+        os.makedirs(f"{Path.home()}/MadLips")
+    except:
+        print("Welcome back\n")
     os.chdir(f"{Path.home()}/MadLips")
     try:
         os.makedirs("docs")
