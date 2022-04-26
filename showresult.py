@@ -1,6 +1,18 @@
 from tkinter import *
 from tkinter.ttk import *
 from pathlib import Path
+import sys, os
+def resource_path(relative_path):
+    """ Get the absolute path to the resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+        # Just use file=resource_path('rock.png') instead of file='rock.png'
+    return os.path.join(base_path, relative_path)
+
+
 
 
 def result(tex='The text would be showed here.'):
@@ -17,8 +29,8 @@ def result(tex='The text would be showed here.'):
     result_wind.bind("<Escape>", closeres)
 
 
-    ok_image = PhotoImage(file=f"{Path.home()}\\MadLips\\btnok.png")
-    bill_image = PhotoImage(file=f"{Path.home()}\\MadLips\\bill.png")
+    ok_image = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\btnok.png"))
+    bill_image = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\bill.png"))
     result_wind.ok_img = ok_image
     result_wind.bill_img = bill_image
 

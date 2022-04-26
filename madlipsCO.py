@@ -5,21 +5,33 @@ inichecker.inichecker()
 from tkinter import *
 from tkinter.ttk import *
 import showresult, noun, verb, adje, play, register, find_index, view
+import sys
+def resource_path(relative_path):
+    """ Get the absolute path to the resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+        # Just use file=resource_path('rock.png') instead of file='rock.png'
+    return os.path.join(base_path, relative_path)
+
+
 
 os.chdir(f'{Path.home()}/MadLips/')
 # Create object
 root = Tk()
 root.geometry("1140x570")# Adjust size
-bg = PhotoImage(file="stardew.png")# Add image file
+bg = PhotoImage(file=resource_path("stardew.png"))# Add image file
 canvas1 = Canvas(root, width=400, height=400, bd=0, highlightthickness=0, relief='ridge')# Create Canvas
 canvas1.pack(fill="both", expand=True)
 canvas1.create_image(0, 0, image=bg, anchor="nw")# Display image
 
 # images
-btnplay_img = PhotoImage(file=r"btnplay.png")
-btnnew_img = PhotoImage(file=r"btnnew.png")
-btnview_img = PhotoImage(file=r"btnview.png")
-btnexit_img = PhotoImage(file=r"btnexit.png")
+btnplay_img = PhotoImage(file=resource_path(r"btnplay.png"))
+btnnew_img = PhotoImage(file=resource_path(r"btnnew.png"))
+btnview_img = PhotoImage(file=resource_path(r"btnview.png"))
+btnexit_img = PhotoImage(file=resource_path(r"btnexit.png"))
 
 # Create Buttons
 btnplay = Button(root, image=btnplay_img, command=play.play)

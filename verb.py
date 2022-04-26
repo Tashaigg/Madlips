@@ -4,6 +4,18 @@ from pathlib import Path
 import adje
 import showresult
 import find_index
+import sys, os
+def resource_path(relative_path):
+    """ Get the absolute path to the resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+        # Just use file=resource_path('rock.png') instead of file='rock.png'
+    return os.path.join(base_path, relative_path)
+
+
 def verb(tex):
     def saveverb(event="1"):
         texto = tex
@@ -34,11 +46,11 @@ def verb(tex):
     askv.bind("<Escape>", closeaskv)
 
     #images
-    enterverb_img = PhotoImage(file=f"{Path.home()}\\MadLips\\enterverb.png")
+    enterverb_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\enterverb.png"))
     askv.enterverb_img = enterverb_img
-    cancel_img = PhotoImage(file=f"{Path.home()}\\MadLips\\btncancel.png")
+    cancel_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\btncancel.png"))
     askv.cancel_img = cancel_img
-    ok_img = PhotoImage(file=f"{Path.home()}\\MadLips\\btnok.png")
+    ok_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\btnok.png"))
     askv.ok_img = ok_img
 
     # Create Canvas

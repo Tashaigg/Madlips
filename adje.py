@@ -3,6 +3,18 @@ from tkinter.ttk import *
 from pathlib import Path
 import showresult
 import find_index
+import sys, os
+def resource_path(relative_path):
+    """ Get the absolute path to the resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+        # Just use file=resource_path('image.png') instead of file='image.png'
+    return os.path.join(base_path, relative_path)
+
+
 def adje(tex):
     def saveadje(event="1"):
         texto = tex
@@ -30,11 +42,11 @@ def adje(tex):
     aska.bind("<Escape>", closeaska)
 
     #images
-    cancel_img = PhotoImage(file=f'{Path.home()}\\MadLips\\btncancel.png')
+    cancel_img = PhotoImage(file=resource_path(f'{Path.home()}\\MadLips\\btncancel.png'))
     aska.cancel_img = cancel_img
-    ok_img = PhotoImage(file=f'{Path.home()}\\MadLips\\btnok.png')
+    ok_img = PhotoImage(file=resource_path(f'{Path.home()}\\MadLips\\btnok.png'))
     aska.ok_img = ok_img
-    enteradjective_img = PhotoImage(file=f"{Path.home()}\\MadLips\\enteradjective.png")
+    enteradjective_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\enteradjective.png"))
     aska.enteradjective_img = enteradjective_img
 
     # Create Canvas

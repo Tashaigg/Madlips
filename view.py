@@ -3,6 +3,18 @@ from tkinter.ttk import *
 from pathlib import Path
 import find_index
 import showresult
+import sys, os
+def resource_path(relative_path):
+    """ Get the absolute path to the resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+        # Just use file=resource_path('rock.png') instead of file='rock.png'
+    return os.path.join(base_path, relative_path)
+
+
 
 
 def view():
@@ -37,11 +49,11 @@ def view():
     view_wind.bind("<Escape>", closeview)
 
     # Images
-    view_img = PhotoImage(file=f"{Path.home()}\\MadLips\\view.png")
+    view_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\view.png"))
     view_wind.view_img = view_img
-    askview_img = PhotoImage(file=f"{Path.home()}\\MadLips\\askview.png")
+    askview_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\askview.png"))
     view_wind.askview_img = askview_img
-    cancel_img = PhotoImage(file=f"{Path.home()}\\MadLips\\btncancel.png")
+    cancel_img = PhotoImage(file=resource_path(f"{Path.home()}\\MadLips\\btncancel.png"))
     view_wind.cancel_img = cancel_img
 
     # Creating canvas
